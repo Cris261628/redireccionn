@@ -1,0 +1,12 @@
+<ion-content>
+  <ion-card *ngFor="let planeta of planetas">
+    <ion-card-header>
+      <ion-card-title>{{ planeta.name }}</ion-card-title>
+      <ion-card-subtitle>{{ planeta.climate }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Terreno:</strong> {{ planeta.terrain }}</p>
+      <p><strong>Población:</strong> {{ planeta.population }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
