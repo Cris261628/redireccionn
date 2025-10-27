@@ -13,6 +13,10 @@ import { Planeta } from '../../interfaces/interfaces';
 export class PlanetaModalComponent {
   @Input() planeta!: Planeta;
 
+  // Rutas de tus imágenes locales
+  imagenPrincipal = 'assets/img/rogue2.jpg';
+  poster = 'assets/img/rogue.jpg';
+
   constructor(private modalCtrl: ModalController) {}
 
   cerrar() {

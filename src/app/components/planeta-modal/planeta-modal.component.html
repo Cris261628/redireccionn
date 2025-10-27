@@ -1,18 +1,64 @@
-<ion-header>
+<ion-content class="ion-padding">
+
+  <!-- Imagen principal del planeta -->
+  <ion-card *ngIf="planeta">
+    <img [src]="imagenPrincipal" style="width: 100%; height: 30vh; object-fit: cover;">
+    <ion-card-header>
+      <ion-card-title>{{ planeta.name }}</ion-card-title>
+      <ion-card-subtitle>Clima: {{ planeta.climate }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Detalles del planeta -->
+  <ion-grid>
+    <ion-row>
+      <ion-col size="4">
+        <ion-card class="poster">
+          <img [src]="poster" class="poster">
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Terreno:</ion-label>
+          <ion-note slot="end">{{ planeta.terrain }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Población:</ion-label>
+          <ion-note slot="end">{{ planeta.population }}</ion-note>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Estadísticas adicionales -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Datos adicionales</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Diámetro</ion-label>
+          <ion-note slot="end">{{ planeta.diameter }}</ion-note>
+        </ion-item>
+        <ion-item>
+          <ion-label>Gravedad</ion-label>
+          <ion-note slot="end">{{ planeta.gravity }}</ion-note>
+        </ion-item>
+       
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer no-border>
   <ion-toolbar>
-    <ion-title>{{ planeta.name }}</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="cerrar()">Cerrar</ion-button>
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrar()">
+        <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+        <ion-label>Regresar</ion-label>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-item><strong>Clima:</strong> {{ planeta.climate }}</ion-item>
-    <ion-item><strong>Terreno:</strong> {{ planeta.terrain }}</ion-item>
-    <ion-item><strong>Población:</strong> {{ planeta.population }}</ion-item>
-    <ion-item><strong>Diámetro:</strong> {{ planeta.diameter }}</ion-item>
-    <ion-item><strong>Gravedad:</strong> {{ planeta.gravity }}</ion-item>
-  </ion-list>
-</ion-content>
+</ion-footer>
