@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { PlanetaModalComponent } from './planeta-modal.component';
+import { ModalDetalleComponent } from './modal-detalle.component';
 
-describe('PlanetaModalComponent', () => {
-  let component: PlanetaModalComponent;
-  let fixture: ComponentFixture<PlanetaModalComponent>;
+describe('ModalDetalleComponent', () => {
+  let component: ModalDetalleComponent;
+  let fixture: ComponentFixture<ModalDetalleComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ PlanetaModalComponent ],
+      declarations: [ ModalDetalleComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PlanetaModalComponent);
+    fixture = TestBed.createComponent(ModalDetalleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

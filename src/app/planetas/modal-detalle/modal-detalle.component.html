@@ -1,0 +1,69 @@
+<ion-content *ngIf="planeta">
+  <div class="encabezado">
+    <img src="assets/img/Artorias.jpg" class="fondo" />
+    <img [src]="planeta.imagen" class="fondo" />
+    <div class="nombre-superior">{{ planeta.nombre }}</div>
+  </div>
+
+  <div class="datos-clave">
+    <div class="dato"><label>🧠 Descripción:</label><span>{{ planeta.descripcion }}</span></div>
+    <div class="dato"><label>📏 Diámetro:</label><span>{{ planeta.diametro }} km</span></div>
+    <div class="dato"><label>🌌 Gravedad:</label><span>{{ planeta.gravedad }}</span></div>
+    <div class="dato"><label>🧬 Habitabilidad:</label><span>{{ planeta.habitabilidad ? 'Sí' : 'No' }}</span></div>
+  </div>
+
+  <ion-card class="narrativa">
+    <ion-card-header>
+      <ion-card-title>ESCENARIO DE JUEGO</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p [innerHTML]="getDescripcionEstiloJuego()"></p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="cerrar()">
+          <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+          Regresar
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+</ion-content>
+
+
+<!--<ion-content *ngIf="planeta">
+  <div class="encabezado">
+    <img src="assets/img/Artorias.jpg" class="fondo" />
+  <img [src]="getImagenLocal(planeta)" class="fondo" />
+  <div class="nombre-superior">{{ planeta.name }}</div>
+</div>
+
+  <div class="datos-clave">
+    <div class="dato"><label>🌡️ Clima:</label><span>{{ planeta.climate }}</span></div>
+    <div class="dato"><label>🪐 Terreno:</label><span>{{ planeta.terrain }}</span></div>
+    <div class="dato"><label>📏 Diámetro:</label><span>{{ planeta.diameter }} km</span></div>
+    <div class="dato"><label>🧬 Población:</label><span>{{ planeta.population }}</span></div>
+  </div>
+
+  <ion-card class="narrativa">
+    <ion-card-header>
+      <ion-card-title>ESCENARIO DE JUEGO</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p [innerHTML]="getDescripcionEstiloJuego(planeta)"></p>
+    </ion-card-content>
+  </ion-card>
+  <ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="cerrar()">
+        <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+        Regresar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+</ion-content>-->

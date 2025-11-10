@@ -1,5 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/planetas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Planetas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-  <ion-card *ngFor="let planeta of planetas">
+  <!-- Mensaje si no hay planetas -->
+  <ion-card *ngIf="planetas.length === 0">
+    <ion-card-content>
+      <p>⚠️ No se encontraron planetas. Verifica conexión con Firebase o estructura de datos.</p>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Renderizado visual limpio -->
+  <ion-card *ngFor="let planeta of planetas" (click)="mostrarDetalle(planeta)">
+    <ion-img [src]="planeta.imagen" alt="{{ planeta.nombre }}"></ion-img>
+
+    <ion-card-header>
+      <ion-card-title>{{ planeta.nombre }}</ion-card-title>
+      <ion-card-subtitle>
+        <strong>Gravedad:</strong> {{ planeta.gravedad }} &nbsp; | &nbsp;
+        <strong>Habitabilidad:</strong> {{ planeta.habitabilidad ? 'Sí' : 'No' }}
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p><strong>Descripción:</strong> {{ planeta.descripcion }}</p>
+      <p><strong>Diámetro:</strong> {{ planeta.diametro }} km</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/planetas"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Planetas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let planeta of planetas" (click)="mostrarDetalle(planeta)">
+    <ion-label>{{ planeta.name }}</ion-label>
     <ion-card-header>
       <ion-card-title>{{ planeta.name }}</ion-card-title>
       <ion-card-subtitle>{{ planeta.climate }}</ion-card-subtitle>
@@ -9,4 +56,4 @@
       <p><strong>Población:</strong> {{ planeta.population }}</p>
     </ion-card-content>
   </ion-card>
-</ion-content>
+</ion-content>-->

@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PlanetasPage } from './planetas.page';
+import { PlanetasV2Page } from './planetas-v2.page';
 
 describe('PlanetasPage', () => {
-  let component: PlanetasPage;
-  let fixture: ComponentFixture<PlanetasPage>;
+  let component: PlanetasV2Page;
+  let fixture: ComponentFixture<PlanetasV2Page>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlanetasPage);
+    fixture = TestBed.createComponent(PlanetasV2Page);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

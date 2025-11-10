@@ -1,12 +1,48 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'principal',
+    pathMatch: 'full'
+  },
+  {
+    path: 'principal',
+    loadChildren: () => import('./principal/principal.module').then(m => m.PrincipalPageModule)
+  },
+  {
+    path: 'dos',
+    loadChildren: () => import('./dos/dos.module').then(m => m.DosPageModule)
+  },
+  {
+    path: 'tres',
+    loadChildren: () => import('./tres/tres.module').then(m => m.TresPageModule)
+  },
+  {
+  path: 'planetas',
+  loadComponent: () => import('./planetas/planetas.page').then(m => m.PlanetasPage)
+}
+];
+
+@NgModule({
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+  ],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {}
+
+
+/*import { NgModule } from '@angular/core';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+
 import { PlanetasPage } from './planetas/planetas.page';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'planetas',
+    redirectTo: 'principal',
     pathMatch: 'full'
   },
   {
@@ -21,10 +57,10 @@ const routes: Routes = [
     path: 'tres',
     loadChildren: () => import('./tres/tres.module').then( m => m.TresPageModule)
   },
-  /*{
+  {
     path: 'planetas',
     loadChildren: () => import('./planetas/planetas.module').then( m => m.PlanetasPageModule)
-  },*/
+  },
   {
     path: 'planetas', component: PlanetasPage
   }
@@ -36,4 +72,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { }*/

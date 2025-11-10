@@ -13,3 +13,14 @@ export interface RespuestaPlanetas {
   previous: string | null;
   results: Planeta[];
 }
+
+// Firebase
+export interface Planeta {
+  id?: string;
+  nombre: string;
+  descripcion: string;
+  imagen: string;
+  gravedad: number;
+  habitabilidad: boolean;
+  diametro: number;
+}

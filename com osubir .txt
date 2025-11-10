@@ -1,6 +1,5 @@
-git init
-git add -A
-git commit -m "Subiendo TODO el proyecto al repo"
+ git add .
+git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Cris261628/redireccionn.git
 git push --force -u origin main

@@ -1,20 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
-import { IonicModule } from '@ionic/angular';
-
-import { PlanetasPageRoutingModule } from './planetas-routing.module';
-
-import { PlanetasPage } from './planetas.page';
+import { RouterModule } from '@angular/router';
+import { routes } from './planetas-routing.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    PlanetasPageRoutingModule
-  ],
-  declarations: [PlanetasPage]
+  imports: [RouterModule.forChild(routes)]
 })
 export class PlanetasPageModule {}

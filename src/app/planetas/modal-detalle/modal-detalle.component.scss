@@ -1,0 +1,84 @@
+.encabezado {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 2px solid #333;
+}
+
+.fondo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.nombre-superior {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px #000;
+}
+
+.datos-clave {
+  padding: 1rem;
+  background: #121212;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+
+  .dato {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #ccc;
+
+    label {
+      font-weight: bold;
+      color: #00ffe0;
+    }
+
+    span {
+      font-weight: 500;
+      color: #fff;
+    }
+  }
+}
+
+.narrativa {
+  margin: 1rem;
+  background: #1a1a1a;
+  border-radius: 12px;
+  border: 1px solid #333;
+  color: #eee;
+  padding: 1rem;
+
+  ion-card-title {
+    font-size: 1.2rem;
+    color: #00ffcc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  p {
+    white-space: pre-line;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+}
+
+ion-footer {
+  background: #1a1a1a;
+  border-top: 1px solid #333;
+
+  ion-button {
+    color: #00ffe0;
+    font-weight: bold;
+  }
+
+  ion-icon {
+    margin-right: 6px;
+  }
+}
